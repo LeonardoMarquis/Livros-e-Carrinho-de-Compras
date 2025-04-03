@@ -1,0 +1,18 @@
+public class Principal {
+        public static void main(String[] args) {
+            Autor autor = new Autor("Mauricio Aniche", "40");
+    
+            LivroFisico fisico = new LivroFisico("Livro Físico A", "Descrição do Livro Físico A", 100.0, "ISBN123", autor);
+            Ebook ebook = new Ebook("Ebook A", "Descrição do Ebook A", 100.0, "ISBN789", autor, "WatermarkA");
+            MiniLivro miniLivro = new MiniLivro("minilivro A", "sada", 100.0, "asas" , autor);         
+            CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
+            fisico.aplicaDescontoDe(0.3);
+            ebook.aplicaDescontoDe(0.15);
+            miniLivro.aplicaDescontoDe(0.15);
+            carrinho.adiciona(fisico);
+            carrinho.adiciona(ebook);
+            carrinho.adiciona(miniLivro);
+            System.out.println("Total do carrinho: " + carrinho.getTotal());
+
+    }
+}
